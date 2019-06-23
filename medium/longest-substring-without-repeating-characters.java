@@ -43,6 +43,8 @@ class Solution {
     }
   
    // O(n) solution using sliding window and also a hash set
+  // 11 ms faster than 38.25% of Java online submissions
+  // 37.2MB less than 98.44% of Java online submissions
   public int lengthOfLongestSubstring(String s) {
         int i = 0;
         int j = 0;
