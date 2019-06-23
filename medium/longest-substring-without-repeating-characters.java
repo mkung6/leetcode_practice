@@ -41,4 +41,31 @@ class Solution {
         }
         return Math.max(max, count);
     }
+  
+   // O(n) solution using sliding window and also a hash set
+  public int lengthOfLongestSubstring(String s) {
+        int i = 0;
+        int j = 0;
+        int max = 0;
+        int count = 0;;
+        Set<Character> chars = new HashSet<>();
+        while (i < s.length() && j < s.length()) {
+            if(!chars.contains(s.charAt(j))) {
+                chars.add(s.charAt(j));
+                j++;
+                count++;
+            }
+            else {
+                chars.remove(s.charAt(i));
+                i++;
+                if (count > max) {
+                    max = count;
+                }
+                count--;
+            }
+        }
+        return Math.max(max, count);
+    }
 }
+  
+ 
